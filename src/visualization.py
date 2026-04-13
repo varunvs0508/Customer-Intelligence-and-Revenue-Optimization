@@ -28,7 +28,11 @@ def create_dashboard(df, customer_metrics, category_revenue, monthly_sales, disc
     plt.xticks(rotation=45)
 
     plt.subplot(2, 3, 6)
-    plt.axis('off')
+    plt.hist(customer_metrics['total_spent'], bins=30, color='#4C72B0', edgecolor='black')
+    plt.title("Customer Spending Distribution")
+    plt.xlabel("Total Spend")
+    plt.ylabel("Number of Customers")
+    plt.grid(True, linestyle='--', alpha=0.5)
 
     plt.tight_layout()
     plt.savefig("shoppulse_customer_analytics.png", dpi=300)
